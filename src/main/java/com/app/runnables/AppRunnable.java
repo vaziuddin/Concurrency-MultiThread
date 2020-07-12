@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -33,6 +35,8 @@ public class AppRunnable {
 		
 		Thread thread = new Thread(runnable);
 		thread.start();
+		Executor executor = Executors.newSingleThreadExecutor();
+		executor.execute(runnable);
 	}
 	
 
