@@ -33,8 +33,8 @@ public class AppRunnable {
 			}
 		};
 		
-		Thread thread = new Thread(runnable);
-		thread.start();
+		//Thread thread = new Thread(runnable);
+		//thread.start();
 		Executor executor = Executors.newSingleThreadExecutor();
 		executor.execute(runnable);
 	}
